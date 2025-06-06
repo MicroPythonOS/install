@@ -5,7 +5,7 @@
   "new_install_prompt_erase": true,
   "builds": [
     {
-      "chipFamily": "ESP32",
+      "chipFamily": "ESP32-S3",
       "parts": [
         { "path": "/firmware_images/Waveshare/ESP32-S3-Touch-LCD-2/Waveshare_ESP32-S3-Touch-LCD-2_0.0.4.bin", "offset": 0 }
       ]
