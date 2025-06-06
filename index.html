@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MicroPythonOS Installer</title>
-    <!-- Step 1: Load ESP Web Tools JavaScript -->
     <script
       type="module"
       src="https://unpkg.com/esp-web-tools@10/dist/web/install-button.js?module"
@@ -153,18 +152,17 @@
             <div class="container">
                 <h2>Install MicroPythonOS</h2>
                 <p>Click the button below to flash MicroPythonOS firmware onto your ESP device using WebSerial. Ensure your device is connected via USB and you're using a supported browser (e.g., Chrome or Edge).</p>
-                <!-- Step 2: ESP Web Install Button -->
                 <esp-web-install-button manifest="/manifests/Waveshare/ESP32-S3-Touch-LCD-2/Waveshare_ESP32-S3-Touch-LCD-2.json" ></esp-web-install-button>
                 <div class="instructions">
                     <h3>How to Use</h3>
                     <ol>
                         <li>Connect the device to your computer via USB.</li>
                         <li>Put it in "Bootloader" mode by long-pressing the button. You might have to try several times.</li>
+			<li>Start a webbrowser with WebSerial support like Google Chrome or Edge.</li>
                         <li>Click the "Install" button above.</li>
                         <li>Select your device from the browser's serial port prompt.</li>
                         <li>Follow the on-screen instructions to complete the installation.</li>
                     </ol>
-                    <p><strong>Note:</strong> Use a compatible browser like Google Chrome or Edge for WebSerial support.</p>
                 </div>
             </div>
         </section>
