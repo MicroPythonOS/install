@@ -152,12 +152,13 @@
             <div class="container">
                 <h2>Install MicroPythonOS</h2>
                 <p>Click the button below to flash MicroPythonOS firmware onto your ESP device using WebSerial. Ensure your device is connected via USB and you're using a supported browser (e.g., Chrome or Edge).</p>
+                <p>Don't have a device yet? Buy a supported one, like the <a href="https://www.waveshare.com/wiki/ESP32-S3-Touch-LCD-2">Waveshare ESP32-S3-Touch-LCD-2</a>. Or check out <a href="https://docs.micropythonos.com">the docs</a> to see how you can run it on your desktop PC.</p>
                 <esp-web-install-button manifest="/manifests/Waveshare/ESP32-S3-Touch-LCD-2/Waveshare_ESP32-S3-Touch-LCD-2.json" ></esp-web-install-button>
                 <div class="instructions">
                     <h3>How to Use</h3>
                     <ol>
                         <li>Connect the device to your computer via USB.</li>
-                        <li>Put it in "Bootloader" mode by pressing the "BOOT" button on your device for 4 seconds. You might have to try several times, until it shows "Bootloader" on the display.</li>
+                        <li>If it already has MicroPythonOS installed, put it in "Bootloader" mode through the Settings. If it's the factory firmware, you're good.</li>
 			<li>Start a webbrowser with WebSerial support like Chrome, Brave or Edge.</li>
                         <li>Click the "Install" button above.</li>
                         <li>Select your device from the browser's serial port prompt.</li>
