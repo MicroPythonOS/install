@@ -15,20 +15,17 @@
             padding: 0;
             box-sizing: border-box;
         }
-
         body {
             font-family: 'Arial', sans-serif;
             line-height: 1.6;
             color: #333;
             background-color: #f4f4f9;
         }
-
         .container {
             max-width: 800px;
             margin: 0 auto;
             padding: 0 20px;
         }
-
         /* Header Styles */
         header {
             background-color: #2c3e50;
@@ -36,40 +33,40 @@
             text-align: center;
             padding: 3rem 0;
         }
-
         header h1 {
             font-size: 2.5rem;
             margin-bottom: 0.5rem;
         }
-
         header p {
             font-size: 1.2rem;
             opacity: 0.9;
         }
-
         /* Main Section */
         .installer-section {
             padding: 3rem 0;
             text-align: center;
         }
-
         .installer-section h2 {
             font-size: 2rem;
             margin-bottom: 1rem;
             color: #2c3e50;
         }
-
         .installer-section p {
             max-width: 600px;
             margin: 0 auto 1.5rem;
             color: #555;
         }
-
+        .device-selection {
+            margin: 1.5rem 0;
+        }
+        .device-selection label {
+            margin: 0 1rem;
+            font-size: 1.1rem;
+        }
         esp-web-install-button {
             display: inline-block;
             margin: 1.5rem 0;
         }
-
         .instructions {
             margin-top: 2rem;
             text-align: left;
@@ -78,26 +75,21 @@
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
-
         .instructions h3 {
             font-size: 1.5rem;
             margin-bottom: 1rem;
             color: #2c3e50;
         }
-
         .instructions ol {
             padding-left: 1.5rem;
             margin-bottom: 1rem;
         }
-
         .instructions li {
             margin-bottom: 0.5rem;
         }
-
         .instructions p {
             color: #555;
         }
-
         /* Footer Styles */
         footer {
             background-color: #2c3e50;
@@ -105,36 +97,33 @@
             text-align: center;
             padding: 1.5rem 0;
         }
-
         footer p {
             margin-bottom: 0.5rem;
         }
-
         footer a {
             color: #1abc9c;
             text-decoration: none;
         }
-
         footer a:hover {
             text-decoration: underline;
         }
-
         /* Responsive Design */
         @media (max-width: 600px) {
             header h1 {
                 font-size: 2rem;
             }
-
             header p {
                 font-size: 1rem;
             }
-
             .installer-section h2 {
                 font-size: 1.5rem;
             }
-
             .container {
                 padding: 0 15px;
+            }
+            .device-selection label {
+                display: block;
+                margin: 0.5rem 0;
             }
         }
     </style>
@@ -146,35 +135,48 @@
             <p>Effortlessly install MicroPythonOS on your microcontroller.</p>
         </div>
     </header>
-
     <main>
         <section class="installer-section">
             <div class="container">
                 <h2>Install MicroPythonOS</h2>
                 <p>Click the button below to flash MicroPythonOS firmware onto your ESP device using WebSerial. Ensure your device is connected via USB and you're using a supported browser (e.g., Chrome or Edge).</p>
                 <p>Don't have a device yet? Buy a supported one, like the <a href="https://www.waveshare.com/wiki/ESP32-S3-Touch-LCD-2">Waveshare ESP32-S3-Touch-LCD-2</a>. Or check out <a href="https://docs.micropythonos.com">the docs</a> to see how you can run it on your desktop PC.</p>
-                <esp-web-install-button manifest="/manifests/Waveshare/ESP32-S3-Touch-LCD-2/Waveshare_ESP32-S3-Touch-LCD-2.json" ></esp-web-install-button>
+                <div class="device-selection">
+                    <label>
+                        <input type="radio" name="device" value="/manifests/Waveshare/ESP32-S3-Touch-LCD-2/Waveshare_ESP32-S3-Touch-LCD-2.json" checked onchange="updateManifest()"> Waveshare ESP32-S3-Touch-LCD-2
+                    </label>
+                    <label>
+                        <input type="radio" name="device" value="/manifests/Fri3dCamp2024Badge/Fri3d_Camp_2024_Badge.json" onchange="updateManifest()"> Fri3d Camp 2024 Badge
+                    </label>
+                </div>
+                <esp-web-install-button id="installButton" manifest="/manifests/Waveshare/ESP32-S3-Touch-LCD-2/Waveshare_ESP32-S3-Touch-LCD-2.json"></esp-web-install-button>
                 <div class="instructions">
                     <h3>How to Use</h3>
                     <ol>
                         <li>Connect the device to your computer via USB.</li>
                         <li>If it already has MicroPythonOS installed, put it in "Bootloader" mode through the Settings. If it's the factory firmware, you're good.</li>
-			<li>Start a webbrowser with WebSerial support like Chrome, Brave or Edge.</li>
+                        <li>Start a webbrowser with WebSerial support like Chrome, Brave or Edge.</li>
                         <li>Click the "Install" button above.</li>
                         <li>Select your device from the browser's serial port prompt.</li>
                         <li>Follow the instructions to start the installation.</li>
-			<li>After it's done, press the "RST" button on your device to restart normally.</li>
+                        <li>After it's done, press the "RST" button on your device to restart normally.</li>
                     </ol>
                 </div>
             </div>
         </section>
     </main>
-
     <footer>
         <div class="container">
             <p>© 2025 MicroPythonOS. All rights reserved.</p>
             <p><a href="https://micropython.org" target="_blank">Learn more about MicroPython</a></p>
         </div>
     </footer>
+    <script>
+        function updateManifest() {
+            const selectedDevice = document.querySelector('input[name="device"]:checked').value;
+            const installButton = document.querySelector('#installButton');
+            installButton.setAttribute('manifest', selectedDevice);
+        }
+    </script>
 </body>
 </html>
