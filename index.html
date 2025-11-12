@@ -159,12 +159,19 @@
                     <h3>How to Use</h3>
                     <ol>
                         <li>Connect the device to your computer via USB.</li>
-                        <li>If it already has MicroPythonOS installed, put it in "Bootloader" mode through the Settings. If it's the factory firmware, you're good.</li>
-                        <li>Start a webbrowser with WebSerial support like Chrome, Brave or Edge.</li>
+                        <li>Put it in bootloader mode:
+                            <ul>
+                                <li>if it already has MicroPythonOS installed, go to Settings - Restart to Bootloader</li>
+                                <li>if it's fresh from the factory, it's probably already good</li>
+                                <li>press the IO0 (BOOT) button while plugging in the USB cable</li>
+                                <li>press the IO0 (BOOT) button while briefly pressing the reset button</li>
+                         </ul>
+                         It should show up as "303a:1001 Espressif USB JTAG/serial debug unit Systems Espressif Device" instead of a regular MicroPython REPL serial device like "303a:4001 Espressif Systems Espressif Device".</li>
+                        <li>After connecting it to your computer via USB, start up a webbrowser with WebSerial support like Chrome, Brave or Edge. If the browser was already running, you probably need to restart it.</li>
                         <li>Click the "Install" button above.</li>
                         <li>Select your device from the browser's serial port prompt.</li>
                         <li>Follow the instructions to start the installation.</li>
-                        <li>After it's done, press the "RST" button on your device to restart normally.</li>
+                        <li>After it's done, you may need to press the "RST" button on your device to restart normally.</li>
                     </ol>
                 </div>
             </div>
