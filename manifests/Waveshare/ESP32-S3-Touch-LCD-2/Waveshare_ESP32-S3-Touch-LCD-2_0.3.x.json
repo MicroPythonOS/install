@@ -1,13 +1,13 @@
 {
   "name": "MicroPythonOS",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "funding_url": "https://MicroPythonOS.com",
   "new_install_prompt_erase": true,
   "builds": [
     {
       "chipFamily": "ESP32-S3",
       "parts": [
-        { "path": "/firmware_images/Waveshare/ESP32-S3-Touch-LCD-2/MicroPythonOS_waveshare-esp32-s3-touch-lcd-2_prod_0.3.1.bin", "offset": 0 }
+        { "path": "/firmware_images/Waveshare/ESP32-S3-Touch-LCD-2/MicroPythonOS_waveshare-esp32-s3-touch-lcd-2_prod_0.3.2.bin", "offset": 0 }
       ]
     }
   ]
