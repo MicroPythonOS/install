@@ -110,6 +110,34 @@
         footer a:hover {
             text-decoration: underline;
         }
+        /* Old Releases Toggle */
+        .old-releases-toggle {
+            margin: 1rem 0;
+            padding: 0.6rem 1.2rem;
+            background-color: #ecf0f1;
+            border: 1px solid #bdc3c7;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            color: #2c3e50;
+            transition: background-color 0.2s;
+        }
+        .old-releases-toggle:hover {
+            background-color: #d5dbdb;
+        }
+        .old-releases-section {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .old-releases-section.expanded {
+            max-height: 800px;
+        }
+        .old-releases-label {
+            font-size: 0.95rem;
+            color: #7f8c8d;
+            margin: 0.5rem 0 0.5rem 8rem;
+        }
         /* Responsive Design */
         @media (max-width: 600px) {
             header h1 {
@@ -146,19 +174,21 @@
                 <p>Don't have a device yet? Buy a supported one, like the <a href="https://www.waveshare.com/wiki/ESP32-S3-Touch-LCD-2">Waveshare ESP32-S3-Touch-LCD-2</a>. Or check out <a href="https://docs.micropythonos.com">the docs</a> to see how you can run it on your desktop PC.</p>
                 <div class="device-selection">
                     <label><input type="radio" name="device" value="/manifests/esp32/MicroPythonOS_esp32_0.5.x.json" onchange="updateManifest()"> Unified for all ESP32-S3 devices: Waveshare and Fri3d Camp 2024 Badge: version 0.5.0</label>
-<br/>
-Old releases, only for reverting or troubleshooting:
-<br/>
-                    <label><input type="radio" name="device" value="/manifests/Waveshare/ESP32-S3-Touch-LCD-2/Waveshare_ESP32-S3-Touch-LCD-2_0.4.x.json" onchange="updateManifest()"> Waveshare ESP32-S3-Touch-LCD-2: version 0.4.0</label>
-                    <label><input type="radio" name="device" value="/manifests/Waveshare/ESP32-S3-Touch-LCD-2/Waveshare_ESP32-S3-Touch-LCD-2_0.3.x.json" onchange="updateManifest()"> Waveshare ESP32-S3-Touch-LCD-2: version 0.3.2</label>
-                    <label><input type="radio" name="device" value="/manifests/Waveshare/ESP32-S3-Touch-LCD-2/Waveshare_ESP32-S3-Touch-LCD-2_0.2.x.json" onchange="updateManifest()"> Waveshare ESP32-S3-Touch-LCD-2: version 0.2.1</label>
-                    <label><input type="radio" name="device" value="/manifests/Waveshare/ESP32-S3-Touch-LCD-2/Waveshare_ESP32-S3-Touch-LCD-2_0.1.1.json" onchange="updateManifest()"> Waveshare ESP32-S3-Touch-LCD-2: version 0.1.1</label>
-                    <label><input type="radio" name="device" value="/manifests/Waveshare/ESP32-S3-Touch-LCD-2/Waveshare_ESP32-S3-Touch-LCD-2_0.0.9.json" onchange="updateManifest()"> Waveshare ESP32-S3-Touch-LCD-2: version 0.0.9</label>
-<br/>
-                    <label><input type="radio" name="device" value="/manifests/Fri3d-Camp/fri3d-2024/fri3d-2024_0.4.x.json" onchange="updateManifest()"> Fri3d Camp 2024 Badge: version 0.4.0</label>
-                    <label><input type="radio" name="device" value="/manifests/Fri3d-Camp/fri3d-2024/fri3d-2024_0.3.x.json" onchange="updateManifest()"> Fri3d Camp 2024 Badge: version 0.3.2</label>
-                    <label><input type="radio" name="device" value="/manifests/Fri3d-Camp/fri3d-2024/fri3d-2024_0.2.x.json" onchange="updateManifest()"> Fri3d Camp 2024 Badge: version 0.2.1</label>
-                    <label><input type="radio" name="device" value="/manifests/Fri3d-Camp/fri3d-2024/fri3d-2024_0.1.1.json" onchange="updateManifest()"> Fri3d Camp 2024 Badge: version 0.1.1</label>
+                    <br/>
+                    <button class="old-releases-toggle" onclick="toggleOldReleases()">Show old releases ▼</button>
+                    <div id="oldReleasesSection" class="old-releases-section">
+                        <p class="old-releases-label">Old releases, only for reverting or troubleshooting:</p>
+                        <label><input type="radio" name="device" value="/manifests/Waveshare/ESP32-S3-Touch-LCD-2/Waveshare_ESP32-S3-Touch-LCD-2_0.4.x.json" onchange="updateManifest()"> Waveshare ESP32-S3-Touch-LCD-2: version 0.4.0</label>
+                        <label><input type="radio" name="device" value="/manifests/Waveshare/ESP32-S3-Touch-LCD-2/Waveshare_ESP32-S3-Touch-LCD-2_0.3.x.json" onchange="updateManifest()"> Waveshare ESP32-S3-Touch-LCD-2: version 0.3.2</label>
+                        <label><input type="radio" name="device" value="/manifests/Waveshare/ESP32-S3-Touch-LCD-2/Waveshare_ESP32-S3-Touch-LCD-2_0.2.x.json" onchange="updateManifest()"> Waveshare ESP32-S3-Touch-LCD-2: version 0.2.1</label>
+                        <label><input type="radio" name="device" value="/manifests/Waveshare/ESP32-S3-Touch-LCD-2/Waveshare_ESP32-S3-Touch-LCD-2_0.1.1.json" onchange="updateManifest()"> Waveshare ESP32-S3-Touch-LCD-2: version 0.1.1</label>
+                        <label><input type="radio" name="device" value="/manifests/Waveshare/ESP32-S3-Touch-LCD-2/Waveshare_ESP32-S3-Touch-LCD-2_0.0.9.json" onchange="updateManifest()"> Waveshare ESP32-S3-Touch-LCD-2: version 0.0.9</label>
+                        <br/>
+                        <label><input type="radio" name="device" value="/manifests/Fri3d-Camp/fri3d-2024/fri3d-2024_0.4.x.json" onchange="updateManifest()"> Fri3d Camp 2024 Badge: version 0.4.0</label>
+                        <label><input type="radio" name="device" value="/manifests/Fri3d-Camp/fri3d-2024/fri3d-2024_0.3.x.json" onchange="updateManifest()"> Fri3d Camp 2024 Badge: version 0.3.2</label>
+                        <label><input type="radio" name="device" value="/manifests/Fri3d-Camp/fri3d-2024/fri3d-2024_0.2.x.json" onchange="updateManifest()"> Fri3d Camp 2024 Badge: version 0.2.1</label>
+                        <label><input type="radio" name="device" value="/manifests/Fri3d-Camp/fri3d-2024/fri3d-2024_0.1.1.json" onchange="updateManifest()"> Fri3d Camp 2024 Badge: version 0.1.1</label>
+                    </div>
                 </div>
                 <esp-web-install-button id="installButton" manifest="/manifests/Waveshare/ESP32-S3-Touch-LCD-2/Waveshare_ESP32-S3-Touch-LCD-2.json"></esp-web-install-button>
                 <div class="instructions">
@@ -194,6 +224,19 @@ Old releases, only for reverting or troubleshooting:
             const selectedDevice = document.querySelector('input[name="device"]:checked').value;
             const installButton = document.querySelector('#installButton');
             installButton.setAttribute('manifest', selectedDevice);
+        }
+
+        function toggleOldReleases() {
+            const section = document.getElementById('oldReleasesSection');
+            const button = event.target;
+
+            if (section.classList.contains('expanded')) {
+                section.classList.remove('expanded');
+                button.textContent = 'Show old releases ▼';
+            } else {
+                section.classList.add('expanded');
+                button.textContent = 'Hide old releases ▲';
+            }
         }
     </script>
 </body>
