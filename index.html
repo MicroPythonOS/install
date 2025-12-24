@@ -204,7 +204,8 @@
                         <label><input type="radio" name="device" value="/manifests/Fri3d-Camp/fri3d-2024/fri3d-2024_0.1.1.json" onchange="updateManifest()"> Fri3d Camp 2024 Badge: version 0.1.1</label>
                     </div>
                 </div>
-                <esp-web-install-button id="installButton" manifest="/manifests/Waveshare/ESP32-S3-Touch-LCD-2/Waveshare_ESP32-S3-Touch-LCD-2.json"></esp-web-install-button>
+                <!-- careful: if the user doesn't select anything and just leaves the default radio button selected, this will not be updated: -->
+                <esp-web-install-button id="installButton" manifest="/manifests/esp32/MicroPythonOS_esp32_0.5.x.json"></esp-web-install-button>
                 <div class="instructions">
                     <h3>How to Use</h3>
                     <ol>
