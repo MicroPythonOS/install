@@ -307,125 +307,141 @@
         </div>
     </header>
     <main>
-        <section class="installer-section">
-            <div class="container">
-                <h2>Install MicroPythonOS</h2>
-                <p>Click the button below to flash <a href="https://micropythonos.com">MicroPythonOS</a> firmware onto your ESP device using WebSerial. Ensure
-                    your device is connected via USB and you're using a supported browser (e.g., Chrome or Edge).</p>
-                <p>Don't have a device yet? Buy a supported one, like the <a
-                        href="https://www.waveshare.com/wiki/ESP32-S3-Touch-LCD-2">Waveshare ESP32-S3-Touch-LCD-2</a>.
-                    Or check out <a href="https://docs.micropythonos.com">the docs</a> to see how you can run it on your
-                    desktop PC.</p>
-            </div>
-        </section>
+        <div class="container">
 
-        <section class="installer-section">
-            <div class="container">
-                <h2>Select Version</h2>
-                <div class="device-selection">
-                    <label><input type="radio" checked="checked" name="device"
-                            value="/manifests/esp32/MicroPythonOS_esp32_0.6.x.json" onchange="updateManifest()">
-                        <p>Unified for all ESP32-S3 devices: Waveshare and Fri3d Camp 2024 Badge: version 0.6.0</p>
-                    </label>
-                    <br />
-                    <button class="old-releases-toggle" onclick="toggleOldReleases()">Show old releases ▼</button>
-                    <div id="oldReleasesSection" class="old-releases-section">
-                        <div class="old-releases-label">These old releases are only here for archival, reverting,
-                            testing or troubleshooting.</div>
-                        <label><input type="radio" name="device" value="/manifests/esp32/MicroPythonOS_esp32_0.5.x.json"
-                                onchange="updateManifest()">
-                            <p>Unified for all ESP32-S3 devices: Waveshare and Fri3d Camp 2024 Badge: version 0.5.2</p>
+            <section class="installer-section">
+                <div class="container">
+                    <h2>Install MicroPythonOS</h2>
+                    <p>Click the button below to flash <a href="https://micropythonos.com">MicroPythonOS</a> firmware
+                        onto your ESP device using WebSerial. Ensure
+                        your device is connected via USB and you're using a supported browser (e.g., Chrome or Edge).
+                    </p>
+                    <p>Don't have a device yet? Buy a supported one, like the <a
+                            href="https://www.waveshare.com/wiki/ESP32-S3-Touch-LCD-2">Waveshare
+                            ESP32-S3-Touch-LCD-2</a>.
+                        Or check out <a href="https://docs.micropythonos.com">the docs</a> to see how you can run it on
+                        your
+                        desktop PC.</p>
+                </div>
+            </section>
+
+            <section class="installer-section">
+                <div class="container">
+                    <h2>Select Version</h2>
+                    <div class="device-selection">
+                        <label><input type="radio" checked="checked" name="device"
+                                value="/manifests/esp32/MicroPythonOS_esp32_0.6.x.json" onchange="updateManifest()">
+                            <p>Unified for all ESP32-S3 devices: Waveshare and Fri3d Camp 2024 Badge: version 0.6.0</p>
                         </label>
                         <br />
-                        <label><input type="radio" name="device"
-                                value="/manifests/Waveshare/ESP32-S3-Touch-LCD-2/Waveshare_ESP32-S3-Touch-LCD-2_0.4.x.json"
-                                onchange="updateManifest()">
-                            <p>Waveshare ESP32-S3-Touch-LCD-2: version 0.4.0</p>
-                        </label>
-                        <label><input type="radio" name="device"
-                                value="/manifests/Waveshare/ESP32-S3-Touch-LCD-2/Waveshare_ESP32-S3-Touch-LCD-2_0.3.x.json"
-                                onchange="updateManifest()">
-                            <p>Waveshare ESP32-S3-Touch-LCD-2: version 0.3.2</p>
-                        </label>
-                        <label><input type="radio" name="device"
-                                value="/manifests/Waveshare/ESP32-S3-Touch-LCD-2/Waveshare_ESP32-S3-Touch-LCD-2_0.2.x.json"
-                                onchange="updateManifest()">
-                            <p>Waveshare ESP32-S3-Touch-LCD-2: version 0.2.1</p>
-                        </label>
-                        <label><input type="radio" name="device"
-                                value="/manifests/Waveshare/ESP32-S3-Touch-LCD-2/Waveshare_ESP32-S3-Touch-LCD-2_0.1.1.json"
-                                onchange="updateManifest()">
-                            <p>Waveshare ESP32-S3-Touch-LCD-2: version 0.1.1</p>
-                        </label>
-                        <label><input type="radio" name="device"
-                                value="/manifests/Waveshare/ESP32-S3-Touch-LCD-2/Waveshare_ESP32-S3-Touch-LCD-2_0.0.9.json"
-                                onchange="updateManifest()">
-                            <p>Waveshare ESP32-S3-Touch-LCD-2: version 0.0.9</p>
-                        </label>
-                        <br />
-                        <label><input type="radio" name="device"
-                                value="/manifests/Fri3d-Camp/fri3d-2024/fri3d-2024_0.4.x.json"
-                                onchange="updateManifest()">
-                            <p>Fri3d Camp 2024 Badge: version 0.4.0</p>
-                        </label>
-                        <label><input type="radio" name="device"
-                                value="/manifests/Fri3d-Camp/fri3d-2024/fri3d-2024_0.3.x.json"
-                                onchange="updateManifest()">
-                            <p>Fri3d Camp 2024 Badge: version 0.3.2</p>
-                        </label>
-                        <label><input type="radio" name="device"
-                                value="/manifests/Fri3d-Camp/fri3d-2024/fri3d-2024_0.2.x.json"
-                                onchange="updateManifest()">
-                            <p>Fri3d Camp 2024 Badge: version 0.2.1</p>
-                        </label>
-                        <label><input type="radio" name="device"
-                                value="/manifests/Fri3d-Camp/fri3d-2024/fri3d-2024_0.1.1.json"
-                                onchange="updateManifest()">
-                            <p>Fri3d Camp 2024 Badge: version 0.1.1</p>
-                        </label>
+                        <button class="old-releases-toggle" onclick="toggleOldReleases()">Show old releases ▼</button>
+                        <div id="oldReleasesSection" class="old-releases-section">
+                            <div class="old-releases-label">These old releases are only here for archival, reverting,
+                                testing or troubleshooting.</div>
+                            <label><input type="radio" name="device"
+                                    value="/manifests/esp32/MicroPythonOS_esp32_0.5.x.json" onchange="updateManifest()">
+                                <p>Unified for all ESP32-S3 devices: Waveshare and Fri3d Camp 2024 Badge: version 0.5.2
+                                </p>
+                            </label>
+                            <br />
+                            <label><input type="radio" name="device"
+                                    value="/manifests/Waveshare/ESP32-S3-Touch-LCD-2/Waveshare_ESP32-S3-Touch-LCD-2_0.4.x.json"
+                                    onchange="updateManifest()">
+                                <p>Waveshare ESP32-S3-Touch-LCD-2: version 0.4.0</p>
+                            </label>
+                            <label><input type="radio" name="device"
+                                    value="/manifests/Waveshare/ESP32-S3-Touch-LCD-2/Waveshare_ESP32-S3-Touch-LCD-2_0.3.x.json"
+                                    onchange="updateManifest()">
+                                <p>Waveshare ESP32-S3-Touch-LCD-2: version 0.3.2</p>
+                            </label>
+                            <label><input type="radio" name="device"
+                                    value="/manifests/Waveshare/ESP32-S3-Touch-LCD-2/Waveshare_ESP32-S3-Touch-LCD-2_0.2.x.json"
+                                    onchange="updateManifest()">
+                                <p>Waveshare ESP32-S3-Touch-LCD-2: version 0.2.1</p>
+                            </label>
+                            <label><input type="radio" name="device"
+                                    value="/manifests/Waveshare/ESP32-S3-Touch-LCD-2/Waveshare_ESP32-S3-Touch-LCD-2_0.1.1.json"
+                                    onchange="updateManifest()">
+                                <p>Waveshare ESP32-S3-Touch-LCD-2: version 0.1.1</p>
+                            </label>
+                            <label><input type="radio" name="device"
+                                    value="/manifests/Waveshare/ESP32-S3-Touch-LCD-2/Waveshare_ESP32-S3-Touch-LCD-2_0.0.9.json"
+                                    onchange="updateManifest()">
+                                <p>Waveshare ESP32-S3-Touch-LCD-2: version 0.0.9</p>
+                            </label>
+                            <br />
+                            <label><input type="radio" name="device"
+                                    value="/manifests/Fri3d-Camp/fri3d-2024/fri3d-2024_0.4.x.json"
+                                    onchange="updateManifest()">
+                                <p>Fri3d Camp 2024 Badge: version 0.4.0</p>
+                            </label>
+                            <label><input type="radio" name="device"
+                                    value="/manifests/Fri3d-Camp/fri3d-2024/fri3d-2024_0.3.x.json"
+                                    onchange="updateManifest()">
+                                <p>Fri3d Camp 2024 Badge: version 0.3.2</p>
+                            </label>
+                            <label><input type="radio" name="device"
+                                    value="/manifests/Fri3d-Camp/fri3d-2024/fri3d-2024_0.2.x.json"
+                                    onchange="updateManifest()">
+                                <p>Fri3d Camp 2024 Badge: version 0.2.1</p>
+                            </label>
+                            <label><input type="radio" name="device"
+                                    value="/manifests/Fri3d-Camp/fri3d-2024/fri3d-2024_0.1.1.json"
+                                    onchange="updateManifest()">
+                                <p>Fri3d Camp 2024 Badge: version 0.1.1</p>
+                            </label>
+                        </div>
+                    </div>
+                    <!-- careful: if the user doesn't select anything and just leaves the default radio button selected, this will not be updated: -->
+                    <esp-web-install-button id="installButton"
+                        manifest="/manifests/esp32/MicroPythonOS_esp32_0.6.x.json"
+                        title="Your browser does not support WebSerial. Please use Chrome or Edge.">
+                        <button slot="activate" class="cta-button">Connect and install</button>
+                        <p slot="unsupported" class="unsupported-msg">
+                            Your browser does not support installing things on ESP devices. Use Google Chrome or
+                            Microsoft
+                            Edge.
+                        </p>
+                    </esp-web-install-button>
+                </div>
+            </section>
+            <section class="instructions-section">
+                <div class="container">
+                    <div class="instructions">
+                        <h2>How to Use</h2>
+                        <ol>
+                            <li>Connect the device to your computer via USB.</li>
+                            <li style="color: red;">Put it in bootloader mode (USB device ID 303a:1001):
+                                <ul>
+                                    <li>if it already has MicroPythonOS installed, go to Settings - Restart to
+                                        Bootloader
+                                    </li>
+                                    <li>to force bootloader mode, keep the IO0 (BOOT) button pressed while plugging in
+                                        the
+                                        USB cable</li>
+                                    <li>or keep the IO0 (BOOT) button pressed while briefly pressing the reset button
+                                    </li>
+                                </ul>
+                                It should show up as "303a:1001 Espressif USB JTAG/serial debug unit Systems Espressif
+                                Device" instead of a regular MicroPython REPL serial device like "303a:4001 Espressif
+                                Systems Espressif Device".
+                            </li>
+                            <li>After connecting it to your computer via USB, start up a webbrowser with WebSerial
+                                support
+                                like Chrome, Brave or Edge. If the browser was already running, you probably need to
+                                restart
+                                it.</li>
+                            <li>Click the "Install" button above.</li>
+                            <li>Select your device from the browser's serial port prompt.</li>
+                            <li>Follow the pop-up instructions to start the installation.</li>
+                            <li>After it's done, you may need to press the "RST" button on your device to restart
+                                normally.
+                            </li>
+                        </ol>
                     </div>
                 </div>
-                <!-- careful: if the user doesn't select anything and just leaves the default radio button selected, this will not be updated: -->
-                <esp-web-install-button id="installButton" manifest="/manifests/esp32/MicroPythonOS_esp32_0.6.x.json"
-                    title="Your browser does not support WebSerial. Please use Chrome or Edge.">
-                    <button slot="activate" class="cta-button">Connect and install</button>
-                    <p slot="unsupported" class="unsupported-msg">
-                        Your browser does not support installing things on ESP devices. Use Google Chrome or Microsoft
-                        Edge.
-                    </p>
-                </esp-web-install-button>
-            </div>
-        </section>
-        <section class="instructions-section">
-            <div class="container">
-                <div class="instructions">
-                    <h2>How to Use</h2>
-                    <ol>
-                        <li>Connect the device to your computer via USB.</li>
-                        <li style="color: red;">Put it in bootloader mode (USB device ID 303a:1001):
-                            <ul>
-                                <li>if it already has MicroPythonOS installed, go to Settings - Restart to Bootloader
-                                </li>
-                                <li>to force bootloader mode, keep the IO0 (BOOT) button pressed while plugging in the
-                                    USB cable</li>
-                                <li>or keep the IO0 (BOOT) button pressed while briefly pressing the reset button</li>
-                            </ul>
-                            It should show up as "303a:1001 Espressif USB JTAG/serial debug unit Systems Espressif
-                            Device" instead of a regular MicroPython REPL serial device like "303a:4001 Espressif
-                            Systems Espressif Device".
-                        </li>
-                        <li>After connecting it to your computer via USB, start up a webbrowser with WebSerial support
-                            like Chrome, Brave or Edge. If the browser was already running, you probably need to restart
-                            it.</li>
-                        <li>Click the "Install" button above.</li>
-                        <li>Select your device from the browser's serial port prompt.</li>
-                        <li>Follow the pop-up instructions to start the installation.</li>
-                        <li>After it's done, you may need to press the "RST" button on your device to restart normally.
-                        </li>
-                    </ol>
-                </div>
-            </div>
-        </section>
+            </section>
+        </div>
     </main>
     <footer>
         <div class="container">
