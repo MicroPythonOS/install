@@ -330,20 +330,28 @@
                     <h2>Select Version</h2>
                     <div class="device-selection">
                         <label><input type="radio" checked="checked" name="device"
-                                value="/manifests/esp32/MicroPythonOS_esp32_0.6.x.json" onchange="updateManifest()">
-                            <p>Unified for all ESP32-S3 devices: Waveshare and Fri3d Camp 2024 Badge: version 0.6.0</p>
+                                value="/manifests/esp32/MicroPythonOS_esp32_0.7.x.json" onchange="updateManifest()">
+                            <p>Unified for all ESP32-S3 devices: Waveshare and Fri3d Camp 2024 Badge: version 0.7.0</p>
                         </label>
                         <br />
                         <button class="old-releases-toggle" onclick="toggleOldReleases()">Show old releases ▼</button>
                         <div id="oldReleasesSection" class="old-releases-section">
                             <div class="old-releases-label">These old releases are only here for archival, reverting,
                                 testing or troubleshooting.</div>
+
+                        <label><input type="radio" checked="checked" name="device"
+                                value="/manifests/esp32/MicroPythonOS_esp32_0.6.x.json" onchange="updateManifest()">
+                            <p>Unified for all ESP32-S3 devices: Waveshare and Fri3d Camp 2024 Badge: version 0.6.0</p>
+                        </label>
+                        <br />
+
                             <label><input type="radio" name="device"
                                     value="/manifests/esp32/MicroPythonOS_esp32_0.5.x.json" onchange="updateManifest()">
                                 <p>Unified for all ESP32-S3 devices: Waveshare and Fri3d Camp 2024 Badge: version 0.5.2
                                 </p>
                             </label>
                             <br />
+
                             <label><input type="radio" name="device"
                                     value="/manifests/Waveshare/ESP32-S3-Touch-LCD-2/Waveshare_ESP32-S3-Touch-LCD-2_0.4.x.json"
                                     onchange="updateManifest()">
@@ -394,7 +402,7 @@
                     </div>
                     <!-- careful: if the user doesn't select anything and just leaves the default radio button selected, this will not be updated: -->
                     <esp-web-install-button id="installButton"
-                        manifest="/manifests/esp32/MicroPythonOS_esp32_0.6.x.json"
+                        manifest="/manifests/esp32/MicroPythonOS_esp32_0.7.x.json"
                         title="Your browser does not support WebSerial. Please use Chrome or Edge.">
                         <button slot="activate" class="cta-button">Connect and install</button>
                         <p slot="unsupported" class="unsupported-msg">
