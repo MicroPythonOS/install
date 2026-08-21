@@ -152,6 +152,29 @@
             font-weight: bold;
         }
 
+        .data-warning {
+            background: #FFF4E5;
+            border: 2px solid #FF6B6B;
+            border-radius: 12px;
+            padding: 16px 20px;
+            margin: 16px auto;
+            max-width: 640px;
+            text-align: left;
+        }
+
+        .data-warning h3 {
+            color: #C0392B;
+            margin-bottom: 8px;
+        }
+
+        .data-warning ul {
+            margin: 8px 0 0 20px;
+        }
+
+        .data-warning li {
+            margin-bottom: 6px;
+        }
+
         .instructions-section {
             margin: 60px 0;
             background: #fff;
@@ -392,6 +415,24 @@
 				</label>
     				<br />
                         </div>
+                    </div>
+                    <div class="data-warning">
+                        <h3>&#9888;&#65039; Already running MicroPythonOS? This can erase your data.</h3>
+                        <p>This installer performs a <strong>clean install</strong>, not an update:</p>
+                        <ul>
+                            <li>If you select <strong>"Erase device"</strong> during installation, your storage
+                                partition — installed apps, WiFi credentials, wallet-display configs, Nostr
+                                keys/npub and all other user data — <strong>will certainly be erased</strong>.</li>
+                            <li>Even without erasing, the new version <strong>might use a different partition
+                                layout</strong> than the one on your device (this can happen from time to time as
+                                MicroPythonOS evolves). In that case your storage partition is reformatted on
+                                first boot, without any prompt.</li>
+                            <li>The supported way to update an installed device is the built-in
+                                <strong>OSUpdate</strong> app (over-the-air update), which preserves all your
+                                data — see <a href="https://docs.micropythonos.com/getting-started/updating/">Updating</a>.</li>
+                            <li>Just like for any electronics device: <strong>back up important files before
+                                re-installing the software</strong>.</li>
+                        </ul>
                     </div>
                     <!-- careful: if the user doesn't select anything and just leaves the default radio button selected, this will not be updated: -->
                     <esp-web-install-button id="installButton"
