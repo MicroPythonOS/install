@@ -1,6 +1,6 @@
 {
   "name": "MicroPythonOS",
-  "version": "0.21.1",
+  "version": "0.21.2",
   "funding_url": "https://MicroPythonOS.com",
   "new_install_prompt_erase": true,
   "builds": [
@@ -8,7 +8,7 @@
       "chipFamily": "ESP32",
       "parts": [
         {
-          "path": "/firmware_images/esp32/MicroPythonOS_esp32_0.21.1.bin",
+          "path": "/firmware_images/esp32/MicroPythonOS_esp32_0.21.2.bin",
           "offset": 0
         }
       ]
